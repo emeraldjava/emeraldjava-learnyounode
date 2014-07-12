@@ -1,7 +1,6 @@
 var util = require('util');
 var fs = require('fs');
-
-//console.log(process.argv[3]);
+var regex = new RegExp('\\.' + process.argv[3] + '$')
 
 fs.readdir(process.argv[2],function (err,files) {
   	if (err) throw err;
@@ -23,7 +22,7 @@ fs.readdir(process.argv[2],function (err,files) {
   			//Regex regex = new Regex()
   			var res = entry.match(pattern);//rocess.argv[3]);
 		    //console.log(res);
-		    if(res!=null)
+		    if(regex.test(entry))
 			  console.log(entry);
 		});
   		//console.log(files);
