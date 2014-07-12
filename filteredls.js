@@ -17,7 +17,11 @@ fs.readdir(process.argv[2],function (err,files) {
   	}
   	else{
   		files.forEach(function(entry) {
-  			var res = entry.match(process.argv[3]);
+
+  			// n$	Matches any string with n at the end of it
+  			var pattern = process.argv[3]+'$';
+  			//Regex regex = new Regex()
+  			var res = entry.match(pattern);//rocess.argv[3]);
 		    //console.log(res);
 		    if(res!=null)
 			  console.log(entry);
