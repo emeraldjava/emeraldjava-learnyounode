@@ -3,13 +3,14 @@ var fs = require("fs");
 
 function onRequest(request, response) {
 
-	var src = fs.createReadStream(process.argv[2]);
+	//var src = fs.createReadStream(process.argv[2]);
 
-	src.pipe(response);
-  response.writeHead(200, {"Content-Type": "text/plain"});
+	fs.createReadStream(process.argv[2]).pipe(response);
+	//src.pipe(response);
+  //response.writeHead(200, {"Content-Type": "text/plain"});
 //  response.write("Hello World");
-  console.log("writing "+process.argv[2]);
-  response.end();
+  //console.log("writing "+process.argv[2]);
+  //response.end();
 }
 
 process.on('SIGINT', function() {
