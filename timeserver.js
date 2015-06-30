@@ -16,7 +16,10 @@ var server = net.createServer(function(c) { //'connection' listener
     + pad(d.getMonth() + 1) + "-"
     + pad(d.getDate()) + " "
     + pad(d.getHours()) + ":"
-    + pad(d.getMinutes());
+    + pad(d.getMinutes()) + ":"
+    + pad(d.getSeconds()) + ":"
+    + pad(d.getMilliseconds());
+
   c.write(date+'\r\n');
   c.pipe(c);
   c.end();
