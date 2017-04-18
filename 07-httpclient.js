@@ -1,5 +1,5 @@
+// lesson 7
 var http = require('http');
-
 var request = http.get(process.argv[2], function(response) {
   //console.log("Got response: " + response.statusCode);
   //console.log('STATUS: ' + response.statusCode);

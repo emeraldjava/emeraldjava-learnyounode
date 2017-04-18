@@ -1,3 +1,4 @@
+// lesson 9
 var http = require('http');
 
 // grabs all the args from the 2nd one
@@ -17,13 +18,13 @@ function doSomeWork(i,url){
 
 	http.get(url, function(response) {
 	response.setEncoding('utf8');
-  
+
   var chars = 0;
   var data = '';
   response.on('data', function (chunk) {
  		data+=chunk;
   });
-  
+
   response.on('error',console.error);
 
   response.on('end',function(end) {

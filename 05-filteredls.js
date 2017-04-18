@@ -1,3 +1,4 @@
+// lesson 5
 var util = require('util');
 var fs = require('fs');
 var regex = new RegExp('\\.' + process.argv[3] + '$')

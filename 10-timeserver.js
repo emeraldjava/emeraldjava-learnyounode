@@ -1,3 +1,4 @@
+// lesson 10
 var net = require('net');
 var dateFormat = require('dateformat');
 
@@ -16,14 +17,14 @@ var server = net.createServer(function(c) { //'connection' listener
     + pad(d.getMonth() + 1) + "-"
     + pad(d.getDate()) + " "
     + pad(d.getHours()) + ":"
-    + pad(d.getMinutes()) + ":"
-    + pad(d.getSeconds()) + ":"
-    + pad(d.getMilliseconds());
+    + pad(d.getMinutes());
+    //+ pad(d.getSeconds()) + ":"
+    //+ pad(d.getMilliseconds());
 
   c.write(date+'\r\n');
   c.pipe(c);
   c.end();
 });
-server.listen(8000, function() { //'listening' listener
-  console.log('server bound');
+server.listen(process.argv[2], function() { //'listening' listener
+  console.log('server bound '+process.argv[2]);
 });
